@@ -1,0 +1,11 @@
+[
+ {
+  "docstatus": 0, 
+  "doctype": "Custom Script", 
+  "dt": "Sales Invoice", 
+  "modified": "2017-12-01 22:54:12.055005", 
+  "name": "Sales Invoice-Client", 
+  "script": "frappe.ui.form.on('Sales Invoice', {\n\twarehouse: function(frm) {\n\t\tvar df = frappe.meta.get_docfield(\"Sales Invoice Item\", \"warehouse\", frm.doc.name);\n\t\tdf.fieldtype = \"Read Only\";\n\t\t$.each(frm.doc.items || [], function(i, v) {\n\t\t\tfrappe.model.set_value(v.doctype, v.name, \"warehouse\", frm.doc.warehouse);\n\t\t});\n\t\tfrm.refresh_field(\"items\");\n\t\tconsole.log(frm.doc.items, df);\n\t}\n});\n\n", 
+  "script_type": "Client"
+ }
+]
