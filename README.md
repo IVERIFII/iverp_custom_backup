@@ -1,4 +1,4 @@
-## Iverifii Customizations
+## IVERP Customizations
 
 Store all customizations on erpnext app by Iverifii
 
